@@ -1,3 +1,3 @@
-# Nova FlatBuffers
+# FlatBuffers extension for Nova
 
-[Nova](https://nova.app) syntax highlighting for [FlatBuffers](https://google.github.io/flatbuffers/).
+A [Nova](https://nova.app) extension adding syntax highlighting for [FlatBuffers](https://google.github.io/flatbuffers/) schema files.
