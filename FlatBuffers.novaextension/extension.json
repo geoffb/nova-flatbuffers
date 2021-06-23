@@ -1,0 +1,8 @@
+{
+	"identifier": "com.geoffblair.flatbuffers",
+	"name": "FlatBuffers",
+	"organization": "Geoff Blair",
+	"description": "Syntax highlighting for FlatBuffers",
+	"version": "1.0",
+	"categories": ["languages"]
+}

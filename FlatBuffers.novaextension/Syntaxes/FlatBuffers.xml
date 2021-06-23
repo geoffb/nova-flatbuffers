@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="flatbuffers">
+	<meta>
+	<name>FlatBuffers</name>
+	<type>structured</type>
+	<preferred-file-extension>fbs</preferred-file-extension>
+	</meta>
+
+	<detectors>
+		<extension priority="1.0">fbs</extension>
+	</detectors>
+
+	<!-- TODO: Fix this -->
+	<indentation>
+		<increase>
+			<expression>^\s*&lt;(([^!/?]|%)(?!.+?([/%]&gt;|&lt;/.+?&gt;))|[%!]--\s*$)</expression>
+		</increase>
+		<decrease>
+			<expression>^\s*(&lt;/[^&gt;]+&gt;|--&gt;|--%&gt;)</expression>
+		</decrease>
+	</indentation>
+
+	<comments>
+		<single>
+			<expression>\/\/</expression>
+		</single>
+		<multiline>
+			<starts-with>
+				<expression>\/\*</expression>
+			</starts-with>
+			<ends-with>
+				<expression>\*\/</expression>
+			</ends-with>
+		</multiline>
+	</comments>
+
+	<brackets>
+		<pair open="{" close="}" />
+		<pair open="[" close="]" />
+		<pair open="(" close=")" />
+	</brackets>
+
+	<scopes>
+		<include syntax="self" collection="comments" />
+		<include syntax="self" collection="keywords" />
+		<include syntax="self" collection="constructs" />
+		<include syntax="self" collection="types" />
+	</scopes>
+
+	<collections>
+
+		<!-- Comments -->
+		<collection name="comments">
+			<scope name="flatbuffers.comment.single" spell-check="true">
+				<expression>\/\/(.*)</expression>
+				<capture number="1" name="flatbuffers.comment.content" />
+			</scope>
+			<scope name="flatbuffers.comment.multiline" spell-check="true">
+				<starts-with>
+					<expression>\/\*</expression>
+				</starts-with>
+				<ends-with>
+					<expression>\*\/</expression>
+				</ends-with>
+			</scope>
+		</collection>
+
+		<!-- Keywords -->
+		<collection name="constructs">
+			<scope name="flatbuffers.keyword">
+				<strings>
+					<string>attribute</string>
+					<string>enum</string>
+					<string>namespace</string>
+					<string>root_type</string>
+					<string>struct</string>
+					<string>table</string>
+					<string>union</string>
+				</strings>
+			</scope>
+		</collection>
+
+		<collection name="types">
+			<scope name="flatbuffers.keyword.type">
+				<strings>
+					<string>float</string>
+					<string>byte</string>
+					<string>string</string>
+					<string>short</string>
+					<string>bool</string>
+					<string>ubyte</string>
+					<string>bool</string>
+				</strings>
+			</scope>
+		</collection>
+	</collections>
+
+</syntax>
