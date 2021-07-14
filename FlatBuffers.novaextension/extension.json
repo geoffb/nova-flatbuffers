@@ -3,7 +3,7 @@
 	"name": "FlatBuffers",
 	"organization": "Geoff Blair",
 	"description": "Syntax highlighting for FlatBuffers",
-	"version": "1.0",
+	"version": "1.0.0",
 	"categories": ["languages"],
 	"repository": "https://github.com/geoffb/nova-flatbuffers",
 	"bugs": "https://github.com/geoffb/nova-flatbuffers/issues"
