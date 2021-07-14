@@ -90,6 +90,8 @@
 					<string>bool</string>
 					<string>ubyte</string>
 					<string>bool</string>
+					<string>uint</string>
+					<string>ushort</string>
 				</strings>
 			</scope>
 		</collection>
