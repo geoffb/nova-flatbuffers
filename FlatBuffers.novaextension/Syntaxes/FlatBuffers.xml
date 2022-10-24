@@ -1,44 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <syntax name="flatbuffers">
 	<meta>
-	<name>FlatBuffers</name>
-	<type>structured</type>
-	<preferred-file-extension>fbs</preferred-file-extension>
+		<name>FlatBuffers</name>
+		<type>structured</type>
+		<preferred-file-extension>fbs</preferred-file-extension>
 	</meta>
 
 	<detectors>
 		<extension priority="1.0">fbs</extension>
 	</detectors>
 
-	<!-- TODO: Fix this -->
-	<indentation>
-		<increase>
-			<expression>^\s*&lt;(([^!/?]|%)(?!.+?([/%]&gt;|&lt;/.+?&gt;))|[%!]--\s*$)</expression>
-		</increase>
-		<decrease>
-			<expression>^\s*(&lt;/[^&gt;]+&gt;|--&gt;|--%&gt;)</expression>
-		</decrease>
-	</indentation>
-
 	<comments>
 		<single>
-			<expression>\/\/</expression>
+			<expression>//</expression>
 		</single>
-		<multiline>
-			<starts-with>
-				<expression>\/\*</expression>
-			</starts-with>
-			<ends-with>
-				<expression>\*\/</expression>
-			</ends-with>
-		</multiline>
 	</comments>
-
-	<brackets>
-		<pair open="{" close="}" />
-		<pair open="[" close="]" />
-		<pair open="(" close=")" />
-	</brackets>
 
 	<scopes>
 		<include syntax="self" collection="comments" />
@@ -49,7 +25,6 @@
 
 	<collections>
 
-		<!-- Comments -->
 		<collection name="comments">
 			<scope name="flatbuffers.comment.single" spell-check="true">
 				<expression>\/\/(.*)</expression>
@@ -65,7 +40,6 @@
 			</scope>
 		</collection>
 
-		<!-- Keywords -->
 		<collection name="constructs">
 			<scope name="flatbuffers.keyword">
 				<strings>
